@@ -3,7 +3,8 @@
 struct Rat {
     x: u8,
     y: u8,
-
+    dir: Direction,
+    hunger: u8,
 }
 
 enum Direction {
