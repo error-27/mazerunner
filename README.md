@@ -16,6 +16,10 @@ An esoteric programming language where you build a maze for a rat.
 - Any unreachable areas will not be read and can be considered comments.
 - Each character in the maze executes an instruction, except some like `+`.
 
+## Data
+- Push and pop unsigned 8-bit integers to a stack.
+- Two unsigned 8-bit accumulators can be written to and read from.
+
 ## Instruction Set (INCOMPLETE)
 | Character | Description                                       |
 |-----------|---------------------------------------------------|
@@ -23,4 +27,7 @@ An esoteric programming language where you build a maze for a rat.
 | `S`       | Starting point for the rat.                       |
 | `c`       | Cheese that must be placed every 10 steps.        |
 | `C`       | Big cheese that ends the program.                 |
-| TODO      | TODO                                              |
+| `a`       | Adds 1 to accumulator A.                          |
+| `b`       | Adds 1 to accumulator B.                          |
+| `A`       | Subtracts 1 from accumulator A.                   |
+| `B`       | Subtracts 1 from accumulator B.                   |
