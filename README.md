@@ -1,6 +1,8 @@
 # mazerunner
 An esoteric programming language where you build a maze for a rat.
 
+## !!! THIS IS A WORK IN PROGRESS AND IS CURRENTLY NOT IN A FUNCTIONAL STATE !!!
+
 ## The Rat
 - The rat starts at the `S` character and tries to reach the `C` character.
 - The rat must eat a cheese (`c` character) every ten steps or the program stops.
