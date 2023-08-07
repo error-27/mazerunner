@@ -2,6 +2,7 @@ use std::io::{Result, Lines, BufReader, BufRead};
 use std::path::Path;
 use std::fs::File;
 
+// Parse file into a Vec for easy access of different parts.
 pub fn parse_file<P>(filename: P) -> Vec<String>
     where P: AsRef<Path>, {
 
@@ -15,6 +16,22 @@ pub fn parse_file<P>(filename: P) -> Vec<String>
     }
 
     parsed
+}
+
+// Return the first found S character's position.
+pub fn find_start(lines: &Vec<String>) -> [u8; 2] {
+    let mut position = [0u8, 0u8];
+
+    let mut iter = 0;
+    for line in lines {
+        if let Some(p) = line.find('S') {
+            position[0] = p as u8;
+            position[1] = iter;
+        }
+        iter += 1;
+    }
+
+    position
 }
 
 fn read_lines<P>(filename: P) -> Result<Lines<BufReader<File>>>
