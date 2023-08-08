@@ -39,3 +39,7 @@ fn read_lines<P>(filename: P) -> Result<Lines<BufReader<File>>>
     let file = File::open(filename)?;
     Ok(BufReader::new(file).lines())
 }
+
+pub fn is_valid(c: &Option<char>) -> bool {
+    c.is_some() && c.unwrap() != ' '
+}
