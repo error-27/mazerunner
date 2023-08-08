@@ -25,4 +25,15 @@ impl Direction {
             _ => eprintln!("how the hell did you make a fifth cardinal direction") // Literally impossible to get this
         }
     }
+
+    fn right(&self) -> Direction {
+        match self {
+            Direction::Up => Direction::Right,
+            Direction::Right => Direction::Down,
+            Direction::Down => Direction::Left,
+            Direction::Left => Direction::Up,
+
+            _ => eprintln!("stop breaking reality itself")
+        }
+    }
 }
