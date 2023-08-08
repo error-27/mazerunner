@@ -7,6 +7,7 @@ pub struct Rat {
     y: u8,
     dir: Direction,
     hunger: u8,
+    food_cooldown: u8,
 }
 
 enum Direction {
@@ -42,6 +43,7 @@ pub fn new(x: u8, y: u8) -> Rat {
         y,
         dir: Direction::Up,
         hunger: 0,
+        food_cooldown: 0,
     }
 }
 
@@ -50,7 +52,25 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
         let current: char = lines[rat.y as usize].chars().nth(rat.x as usize).unwrap();
 
         if current == 'C' {
+            println!("Maze Completed!");
             break; // The Big Cheese has been reached. End the program.
+        }else if current == 'c' {
+            rat.hunger = 0;
+            rat.food_cooldown += 1;
+        }
+
+        if rat.hunger >= 10 {
+            println!("Rat starved at position ({}, {})!", rat.x, rat.y);
+            break;
+        }
+        if rat.food_cooldown >= 3 {
+            println!("Rat overate at position ({}, {})", rat.x, rat.y);
+            break;
+        }
+
+        rat.hunger += 1;
+        if rat.hunger % 5 == 0 && rat.food_cooldown > 0 {
+            rat.food_cooldown -= 1;
         }
 
         // Calculate north, south, east, and west chars.
@@ -89,7 +109,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.y += 1;
                 } else {
-                    eprintln!("Rat is stuck!");
+                    println!("Rat is stuck!");
                     break;
                 }
             }
@@ -106,7 +126,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.x += 1;
                 } else {
-                    eprintln!("Rat is stuck!");
+                    println!("Rat is stuck!");
                     break;
                 }
             }
@@ -123,7 +143,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.y -= 1;
                 } else {
-                    eprintln!("Rat is stuck!");
+                    println!("Rat is stuck!");
                     break;
                 }
             }
@@ -140,7 +160,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.x -= 1;
                 } else {
-                    eprintln!("Rat is stuck!");
+                    println!("Rat is stuck!");
                     break;
                 }
             }

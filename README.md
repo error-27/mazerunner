@@ -15,7 +15,7 @@ An esoteric programming language where you build a maze for a rat.
 ## The Maze
 - The maze is constructed out of valid command characters.
 - It is always closed in and must contain an `S`.
-- Any unreachable areas will not be read and can be considered comments.
+- Any unreachable areas will not be read and can be considered comments. It is recommended to place comments underneath the maze though so the start position is never selected from a comment.
 - Each character in the maze executes an instruction, except some like `+`.
 
 ## Data

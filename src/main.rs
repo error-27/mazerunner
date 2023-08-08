@@ -18,6 +18,4 @@ fn main() {
     let r = rat::new(start[0], start[1]);
 
     rat::run_maze(r, file);
-
-    println!("Maze Completed!!!!");
 }
