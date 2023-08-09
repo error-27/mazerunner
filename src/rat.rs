@@ -66,6 +66,18 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                 rat.hunger = 0;
                 rat.food_cooldown += 1;
             }
+            'a' => {
+                accum_a += 1;
+            }
+            'b' => {
+                accum_b += 1;
+            }
+            'A' => {
+                accum_a -= 1;
+            }
+            'B' => {
+                accum_b -= 1;
+            }
 
             _ => {} // Catch anything unknown or that doesn't run code.
         }

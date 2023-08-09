@@ -19,13 +19,13 @@ pub fn parse_file<P>(filename: P) -> Vec<String>
 }
 
 // Return the first found S character's position.
-pub fn find_start(lines: &Vec<String>) -> [u8; 2] {
-    let mut position = [0u8, 0u8];
+pub fn find_start(lines: &Vec<String>) -> [u32; 2] {
+    let mut position = [0u32, 0u32];
 
     let mut iter = 0;
     for line in lines {
         if let Some(p) = line.find('S') {
-            position[0] = p as u8;
+            position[0] = p as u32;
             position[1] = iter;
         }
         iter += 1;
