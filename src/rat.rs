@@ -51,12 +51,18 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
     loop {
         let current: char = lines[rat.y as usize].chars().nth(rat.x as usize).unwrap();
 
-        if current == 'C' {
-            println!("Maze Completed!");
-            break; // The Big Cheese has been reached. End the program.
-        }else if current == 'c' {
-            rat.hunger = 0;
-            rat.food_cooldown += 1;
+        // Run current instruction
+        match current {
+            'C' => {
+                println!("Maze Completed!"); // Big Cheese has been reached. End the program.
+                break;
+            }
+            'c' => {
+                rat.hunger = 0;
+                rat.food_cooldown += 1;
+            }
+
+            _ => {} // Catch anything unknown or that doesn't run code.
         }
 
         if rat.hunger >= 10 {
@@ -95,6 +101,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
             None
         };
 
+        // Rat movement code
         match rat.dir {
             Direction::Up => {
                 if is_valid(&w) {
