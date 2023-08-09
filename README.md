@@ -23,13 +23,18 @@ An esoteric programming language where you build a maze for a rat.
 - Two unsigned 8-bit accumulators can be written to and read from.
 
 ## Instruction Set (INCOMPLETE)
-| Character | Description                                       |
-|-----------|---------------------------------------------------|
-| `+`       | Acts as a basic path character that does nothing. |
-| `S`       | Starting point for the rat.                       |
-| `c`       | Cheese that must be placed every 10 steps.        |
-| `C`       | Big cheese that ends the program.                 |
-| `a`       | Adds 1 to accumulator A.                          |
-| `b`       | Adds 1 to accumulator B.                          |
-| `A`       | Subtracts 1 from accumulator A.                   |
-| `B`       | Subtracts 1 from accumulator B.                   |
+| Character | Description                                           |
+|-----------|-------------------------------------------------------|
+| `+`       | Acts as a basic path character that does nothing.     |
+| `S`       | Starting point for the rat.                           |
+| `c`       | Cheese that must be placed every 10 steps.            |
+| `C`       | Big cheese that ends the program.                     |
+| `a`       | Adds 1 to accumulator A.                              |
+| `b`       | Adds 1 to accumulator B.                              |
+| `A`       | Subtracts 1 from accumulator A.                       |
+| `B`       | Subtracts 1 from accumulator B.                       |
+| `T`       | Stops rat from moving left if accumulator B is not 0. |
+| `P`       | Pushes accumulator A to the stack.                    |
+| `p`       | Pops from the stack and outputs as a number.          |
+| `r`       | Pops from the stack and outputs as a character.       |
+| `R`       | Pops the whole stack and outputs as a string.         |
