@@ -3,8 +3,8 @@
 use crate::parse::is_valid;
 
 pub struct Rat {
-    x: u8,
-    y: u8,
+    x: u32,
+    y: u32,
     dir: Direction,
     hunger: u8,
     food_cooldown: u8,
@@ -37,7 +37,7 @@ impl Direction {
     }
 }
 
-pub fn new(x: u8, y: u8) -> Rat {
+pub fn new(x: u32, y: u32) -> Rat {
     Rat {
         x,
         y,
@@ -48,6 +48,11 @@ pub fn new(x: u8, y: u8) -> Rat {
 }
 
 pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
+    // Initialize stack and accumulators.
+    let mut stack: Vec<u8> = Vec::new();
+    let mut accum_a: u8 = 0;
+    let mut accum_b: u8 = 0;
+
     loop {
         let current: char = lines[rat.y as usize].chars().nth(rat.x as usize).unwrap();
 
