@@ -78,6 +78,30 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
             'B' => {
                 accum_b -= 1;
             }
+            'P' => {
+                stack.push(accum_a);
+            }
+            'p' => {
+                let o = stack.pop();
+                if o.is_some() {
+                    println!("{}", o.unwrap());
+                }
+            }
+            'r' => {
+                let o = stack.pop();
+                if o.is_some() {
+                    println!("{}", o.unwrap() as char);
+                }
+            }
+            'R' => {
+                for i in 0..stack.len() {
+                    let o = stack.pop();
+                    if o.is_some() {
+                        print!("{}", o.unwrap() as char);
+                    }
+                }
+                print!("\n") // Make sure to newline after this print.
+            }
 
             _ => {} // Catch anything unknown or that doesn't run code.
         }
