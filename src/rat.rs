@@ -121,36 +121,48 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
         }
 
         // Calculate north, south, east, and west chars.
-        let n: Option<char> = if rat.y != 0 {
+        let mut n: Option<char> = if rat.y != 0 {
             lines[(rat.y - 1) as usize].chars().nth(rat.x as usize)
         } else {
             None
         };
-        let w: Option<char> = if rat.x != 0 {
+        let mut w: Option<char> = if rat.x != 0 {
             lines[rat.y as usize].chars().nth((rat.x - 1) as usize)
         } else {
             None
         };
-        let e: Option<char> = if lines[rat.y as usize].len() != (rat.x + 1) as usize {
+        let mut e: Option<char> = if lines[rat.y as usize].len() != (rat.x + 1) as usize {
             lines[rat.y as usize].chars().nth((rat.x + 1) as usize)
         } else {
             None
         };
-        let s: Option<char> = if lines.len() != (rat.y + 1) as usize {
+        let mut s: Option<char> = if lines.len() != (rat.y + 1) as usize {
             lines[(rat.y + 1) as usize].chars().nth(rat.x as usize)
         } else {
             None
         };
 
+        // Set to None if that direction is a one-way.
+        if n.is_some() && n.unwrap() == 'v' {
+            n = None;
+        }
+        if w.is_some() && w.unwrap() == '>' {
+            w = None;
+        }
+        if e.is_some() && e.unwrap() == '<' {
+            e = None;
+        }
+        if s.is_some() && s.unwrap() == '^' {
+            s = None;
+        }
+
+        // Calculate T instruction conditions
         let t_move: bool;
         if current == 'T' && accum_b != 0 {
-            println!("shouldn't turn left");
             t_move = false;
         } else {
             t_move = true;
         }
-
-        println!("{}", current);
 
         // Rat movement code
         match rat.dir {
