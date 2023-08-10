@@ -102,6 +102,12 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                 }
                 print!("\n") // Make sure to newline after this print.
             }
+            'z' => {
+                accum_a = 0;
+            }
+            'Z' => {
+                accum_b = 0;
+            }
 
             _ => {} // Catch anything unknown or that doesn't run code.
         }

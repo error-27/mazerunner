@@ -33,6 +33,8 @@ An esoteric programming language where you build a maze for a rat.
 | `b`       | Adds 1 to accumulator B.                                         |
 | `A`       | Subtracts 1 from accumulator A.                                  |
 | `B`       | Subtracts 1 from accumulator B.                                  |
+| `z`       | Reset accumulator A to 0.                                        |
+| `Z`       | Reset accumulator B to 0.                                        |
 | `T`       | Stops rat from moving left if accumulator B is not 0.            |
 | `P`       | Pushes accumulator A to the stack.                               |
 | `p`       | Pops from the stack and outputs as a number.                     |
