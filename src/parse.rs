@@ -2,6 +2,8 @@ use std::io::{Result, Lines, BufReader, BufRead};
 use std::path::Path;
 use std::fs::File;
 
+const VALID_CHARS: &str = "+ScCabABTPprR><^v";
+
 // Parse file into a Vec for easy access of different parts.
 pub fn parse_file<P>(filename: P) -> Vec<String>
     where P: AsRef<Path>, {
@@ -41,5 +43,5 @@ fn read_lines<P>(filename: P) -> Result<Lines<BufReader<File>>>
 }
 
 pub fn is_valid(c: &Option<char>) -> bool {
-    c.is_some() && c.unwrap() != ' '
+    c.is_some() && VALID_CHARS.contains(c.unwrap())
 }

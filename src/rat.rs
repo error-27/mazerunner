@@ -94,7 +94,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                 }
             }
             'R' => {
-                for i in 0..stack.len() {
+                for _ in 0..stack.len() {
                     let o = stack.pop();
                     if o.is_some() {
                         print!("{}", o.unwrap() as char);
@@ -142,7 +142,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
             None
         };
 
-        let mut t_move = true;
+        let t_move: bool;
         if current == 'T' && accum_b != 0 {
             println!("shouldn't turn left");
             t_move = false;
