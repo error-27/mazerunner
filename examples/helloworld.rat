@@ -1,29 +1,33 @@
-Prints out "HELLO!". I don't have the patience to add "WORLD" too.
+Prints "HELLO WORLD!"
 
-            C
-            R
-            P
-cbbbbbbbbc>+Taacaaaaaa
-+          +         c
-+          ++c++++++Ba
-+
-++c+++z+++cP
-           A
-cbbbbbbbc>+Tacaaaaa
-+         +       c
-+         +c++Baaaa
-+
-+c++++zPPAAcA
+      A
+      c
+      A
+      A
+      A
+++++c++++c+++P+
++             caaaPRC
++c++PPAAA+Pc+
             A
-cbbbbbbbbc>+Tacaaaaa
-+          +       c
+bbbcbbbbbc>+Tacaaaaa
+z          +       c
 +          +c++Baaaa
 +
-+c++++++z+Pc+
-            A
-cbbbbbbbbc>+Tacaaaaa
-+          +       c
-+          +c++Baaaa
+c++++++c+++++++c+++++PAcA
+                        A
+              cbbbbb+c>+Tacaaaa+
+           c  z        +       +
+   c       a  +        c++++Bcaa
+   a       a  +
+   a       a  +
+   a       a  +
+aPc++PAcAAP++Pc
+a
+caaaaaaP+ac
+          a
+cbbbbbbc>+Tacaaaaa
++        +       c
++        + caBaaaa
 +
 +c++++++z+Pc+
             +
