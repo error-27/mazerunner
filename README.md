@@ -1,7 +1,9 @@
 # mazerunner
 An esoteric programming language where you build a maze for a rat.
 
-## !!! THIS IS A WORK IN PROGRESS AND IS CURRENTLY NOT IN A FUNCTIONAL STATE !!!
+## TODO
+* [ ] Instructions to pop from stack and copy to an accumulator.
+* [ ] Instruction to take text input and put it in the stack.
 
 ## The Rat
 - The rat starts at the `S` character and tries to reach the `C` character.
