@@ -1,11 +1,6 @@
 # mazerunner
 An esoteric programming language where you build a maze for a rat.
 
-## TODO
-* [x] Instructions to pop from stack and copy to an accumulator.
-* [ ] Instruction to take text input and put it in the stack.
-* [x] Control flow instruction that allows left if both accumulators are equal.
-
 ## The Rat
 - The rat starts at the `S` character and tries to reach the `C` character.
 - The rat must eat a cheese (`c` character) every ten steps or the program stops.
@@ -47,6 +42,7 @@ An esoteric programming language where you build a maze for a rat.
 | `o`       | Pops from the stack and copies to accumulator A.                  |
 | `O`       | Pops from the stack and copies to accumulator B.                  |
 | `d`       | Pops from the stack and discards the value.                       |
+| `i`       | Takes input from `stdin` and pushes it to the stack.              |
 | `^`       | Northward one-way ramp. The rat can't enter this from the north.  |
 | `>`       | Eastward one-way ramp. The rat can't enter this from the east.    |
 | `<`       | Westward one-way ramp. The rat can't enter this from the west.    |

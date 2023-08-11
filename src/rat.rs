@@ -1,5 +1,6 @@
 // Functions and datatypes for the rat
 
+use std::io::{stdin, stdout, Write};
 use crate::parse::is_valid;
 
 pub struct Rat {
@@ -122,6 +123,21 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
             }
             'd' => {
                 stack.pop();
+            }
+            'i' => {
+                let mut s = String::new();
+                let _ = stdout().flush();
+                stdin().read_line(&mut s).expect("Invalid string");
+                if let Some('\n') = s.chars().next_back() {
+                    s.pop();
+                }
+                if let Some('\r') = s.chars().next_back() {
+                    s.pop();
+                }
+
+                for c in s.chars().rev() {
+                    stack.push(c as u8);
+                }
             }
 
             _ => {} // Catch anything unknown or that doesn't run code.

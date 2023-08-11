@@ -2,7 +2,7 @@ use std::io::{Result, Lines, BufReader, BufRead};
 use std::path::Path;
 use std::fs::File;
 
-const VALID_CHARS: &str = "+ScCabABTPprR><^vzZoOYd";
+const VALID_CHARS: &str = "+ScCabABTPprR><^vzZoOYdi";
 
 // Parse file into a Vec for easy access of different parts.
 pub fn parse_file<P>(filename: P) -> Vec<String>
