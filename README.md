@@ -4,7 +4,7 @@ An esoteric programming language where you build a maze for a rat.
 ## TODO
 * [x] Instructions to pop from stack and copy to an accumulator.
 * [ ] Instruction to take text input and put it in the stack.
-* [ ] Control flow instruction that allows left if both accumulators are equal.
+* [x] Control flow instruction that allows left if both accumulators are equal.
 
 ## The Rat
 - The rat starts at the `S` character and tries to reach the `C` character.
@@ -26,26 +26,27 @@ An esoteric programming language where you build a maze for a rat.
 - Two unsigned 8-bit accumulators can be written to and read from.
 
 ## Instruction Set (INCOMPLETE)
-| Character | Description                                                      |
-|-----------|------------------------------------------------------------------|
-| `+`       | Acts as a basic path character that does nothing.                |
-| `S`       | Starting point for the rat.                                      |
-| `c`       | Cheese that must be placed every 10 steps.                       |
-| `C`       | Big cheese that ends the program.                                |
-| `a`       | Adds 1 to accumulator A.                                         |
-| `b`       | Adds 1 to accumulator B.                                         |
-| `A`       | Subtracts 1 from accumulator A.                                  |
-| `B`       | Subtracts 1 from accumulator B.                                  |
-| `z`       | Reset accumulator A to 0.                                        |
-| `Z`       | Reset accumulator B to 0.                                        |
-| `T`       | Stops rat from moving left if accumulator B is not 0.            |
-| `P`       | Pushes accumulator A to the stack.                               |
-| `p`       | Pops from the stack and outputs as a number.                     |
-| `r`       | Pops from the stack and outputs as a character.                  |
-| `R`       | Pops the whole stack and outputs as a string.                    |
-| `o`       | Pops from the stack and copies to accumulator A.                 |
-| `O`       | Pops from the stack and copies to accumulator B.                 |
-| `^`       | Northward one-way ramp. The rat can't enter this from the north. |
-| `>`       | Eastward one-way ramp. The rat can't enter this from the east.   |
-| `<`       | Westward one-way ramp. The rat can't enter this from the west.   |
-| `v`       | Southward one-way ramp. The rat can't enter this from the south. |
+| Character | Description                                                       |
+|-----------|-------------------------------------------------------------------|
+| `+`       | Acts as a basic path character that does nothing.                 |
+| `S`       | Starting point for the rat.                                       |
+| `c`       | Cheese that must be placed every 10 steps.                        |
+| `C`       | Big cheese that ends the program.                                 |
+| `a`       | Adds 1 to accumulator A.                                          |
+| `b`       | Adds 1 to accumulator B.                                          |
+| `A`       | Subtracts 1 from accumulator A.                                   |
+| `B`       | Subtracts 1 from accumulator B.                                   |
+| `z`       | Reset accumulator A to 0.                                         |
+| `Z`       | Reset accumulator B to 0.                                         |
+| `T`       | Stops rat from moving left if accumulator B is not 0.             |
+| `Y`       | Stops rat from moving left if accumulators A and B are not equal. |
+| `P`       | Pushes accumulator A to the stack.                                |
+| `p`       | Pops from the stack and outputs as a number.                      |
+| `r`       | Pops from the stack and outputs as a character.                   |
+| `R`       | Pops the whole stack and outputs as a string.                     |
+| `o`       | Pops from the stack and copies to accumulator A.                  |
+| `O`       | Pops from the stack and copies to accumulator B.                  |
+| `^`       | Northward one-way ramp. The rat can't enter this from the north.  |
+| `>`       | Eastward one-way ramp. The rat can't enter this from the east.    |
+| `<`       | Westward one-way ramp. The rat can't enter this from the west.    |
+| `v`       | Southward one-way ramp. The rat can't enter this from the south.  |

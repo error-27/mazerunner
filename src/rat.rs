@@ -182,10 +182,18 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
             t_move = true;
         }
 
+        // Calculate Y instruction conditions
+        let y_move: bool;
+        if current == 'Y' && accum_b != accum_a {
+            y_move = false;
+        } else {
+            y_move = true;
+        }
+
         // Rat movement code
         match rat.dir {
             Direction::Up => {
-                if t_move && is_valid(&w) {
+                if t_move && y_move && is_valid(&w) {
                     rat.dir = rat.dir.left();
                     rat.x -= 1;
                 } else if is_valid(&n) {
@@ -202,7 +210,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                 }
             }
             Direction::Left => {
-                if t_move && is_valid(&s) {
+                if t_move && y_move && is_valid(&s) {
                     rat.dir = rat.dir.left();
                     rat.y += 1;
                 } else if is_valid(&w) {
@@ -219,7 +227,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                 }
             }
             Direction::Down => {
-                if t_move && is_valid(&e) {
+                if t_move && y_move && is_valid(&e) {
                     rat.dir = rat.dir.left();
                     rat.x += 1;
                 } else if is_valid(&s) {
@@ -236,7 +244,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                 }
             }
             Direction::Right => {
-                if t_move && is_valid(&n) {
+                if t_move && y_move && is_valid(&n) {
                     rat.dir = rat.dir.left();
                     rat.y -= 1;
                 } else if is_valid(&e) {
