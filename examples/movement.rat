@@ -1,3 +1,5 @@
+Maze to demonstrate how the rat will move, and how cheese works.
+
 +++++c   c+++++c+++++++c+++
    +     +        +       +
    c     +        ++c+++C c    c
@@ -6,5 +8,3 @@
        c     +++      S
        +              +
        +++++c++++++c+++
-
-Bigger maze
