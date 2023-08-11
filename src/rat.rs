@@ -120,6 +120,9 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     accum_b = o.unwrap();
                 }
             }
+            'd' => {
+                stack.pop();
+            }
 
             _ => {} // Catch anything unknown or that doesn't run code.
         }

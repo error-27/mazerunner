@@ -46,6 +46,7 @@ An esoteric programming language where you build a maze for a rat.
 | `R`       | Pops the whole stack and outputs as a string.                     |
 | `o`       | Pops from the stack and copies to accumulator A.                  |
 | `O`       | Pops from the stack and copies to accumulator B.                  |
+| `d`       | Pops from the stack and discards the value.                       |
 | `^`       | Northward one-way ramp. The rat can't enter this from the north.  |
 | `>`       | Eastward one-way ramp. The rat can't enter this from the east.    |
 | `<`       | Westward one-way ramp. The rat can't enter this from the west.    |
