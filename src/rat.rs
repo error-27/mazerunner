@@ -60,7 +60,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
         // Run current instruction
         match current {
             'C' => {
-                println!("Maze Completed!"); // Big Cheese has been reached. End the program.
+                println!("\nMaze Completed!"); // Big Cheese has been reached. End the program.
                 break;
             }
             'c' => {
@@ -144,11 +144,11 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
         }
 
         if rat.hunger >= 10 {
-            println!("Rat starved at position ({}, {})!", rat.x, rat.y);
+            println!("\nRat starved at position ({}, {})!", rat.x, rat.y);
             break;
         }
         if rat.food_cooldown >= 3 {
-            println!("Rat overate at position ({}, {})", rat.x, rat.y);
+            println!("\nRat overate at position ({}, {})", rat.x, rat.y);
             break;
         }
 
@@ -224,7 +224,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.y += 1;
                 } else {
-                    println!("Rat is stuck!");
+                    println!("\nRat is stuck!");
                     break;
                 }
             }
@@ -241,7 +241,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.x += 1;
                 } else {
-                    println!("Rat is stuck!");
+                    println!("\nRat is stuck!");
                     break;
                 }
             }
@@ -258,7 +258,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.y -= 1;
                 } else {
-                    println!("Rat is stuck!");
+                    println!("\nRat is stuck!");
                     break;
                 }
             }
@@ -275,7 +275,7 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
                     rat.dir = rat.dir.right().right();
                     rat.x -= 1;
                 } else {
-                    println!("Rat is stuck!");
+                    println!("\nRat is stuck!");
                     break;
                 }
             }
