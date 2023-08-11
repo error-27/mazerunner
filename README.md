@@ -4,6 +4,7 @@ An esoteric programming language where you build a maze for a rat.
 ## TODO
 * [ ] Instructions to pop from stack and copy to an accumulator.
 * [ ] Instruction to take text input and put it in the stack.
+* [ ] Control flow instruction that allows left if both accumulators are equal.
 
 ## The Rat
 - The rat starts at the `S` character and tries to reach the `C` character.
