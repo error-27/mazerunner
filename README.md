@@ -20,7 +20,7 @@ An esoteric programming language where you build a maze for a rat.
 - Push and pop unsigned 8-bit integers to a stack.
 - Two unsigned 8-bit accumulators can be written to and read from.
 
-## Instruction Set (INCOMPLETE)
+## Instruction Set
 | Character | Description                                                       |
 |-----------|-------------------------------------------------------------------|
 | `+`       | Acts as a basic path character that does nothing.                 |
