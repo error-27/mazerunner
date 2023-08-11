@@ -108,6 +108,18 @@ pub fn run_maze(mut rat: Rat, lines: Vec<String>) {
             'Z' => {
                 accum_b = 0;
             }
+            'o' => {
+                let o = stack.pop();
+                if o.is_some() {
+                    accum_a = o.unwrap();
+                }
+            }
+            'O' => {
+                let o = stack.pop();
+                if o.is_some() {
+                    accum_b = o.unwrap();
+                }
+            }
 
             _ => {} // Catch anything unknown or that doesn't run code.
         }
